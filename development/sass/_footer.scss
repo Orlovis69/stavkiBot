@@ -1,0 +1,21 @@
+.footer-body {
+  padding: 2.5vw;
+}
+
+.section-deals .footer-section {
+  margin-top: 4vw;
+  @media screen and (max-width: $bp-small) {
+    margin-top: 4vw;
+  }
+
+  // position: relative;
+}
+
+.section-deals--personal .footer-section {
+  margin-top: -3vw;
+  @media screen and (max-width: $bp-small) {
+    margin-top: -5vw;
+  }
+
+  // position: relative;
+}

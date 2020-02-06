@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ставкиБОТ ||</title>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
+      as="style"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body--auth">
+    <!-- SIDE NAVIGATION -->
+    <nav class="nav-account">
+      <ul class="nav-list">
+        <!-- add __active class -->
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <img src="img/icon-auth.svg" alt="Logout" class="icon-nav" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#section-about" class="nav-link">
+            <svg
+              viewBox="0 0 7 30"
+              class="icon-nav"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 3.24742C0 2.31959 0.281843 1.54639 0.986452 0.927835C1.69106 0.309278 2.39567 0 3.38212 0C4.36857 0 5.2141 0.309278 5.77779 0.927835C6.34148 1.54639 6.76424 2.31959 6.76424 3.24742C6.76424 4.17526 6.34148 4.94845 5.77779 5.56701C5.2141 6.18557 4.36857 6.49484 3.38212 6.49484C2.39567 6.49484 1.55014 6.18557 0.986452 5.56701C0.422765 4.94845 0 4.17526 0 3.24742ZM6.4824 30H0.422765V8.65979H6.4824V30Z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#section-faq" class="nav-link">
+            <svg
+              viewBox="0 0 18 30"
+              class="icon-nav"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.65737 20.3448C5.65737 18.2759 5.97166 16.8966 6.28596 15.5172C6.60026 14.1379 7.54316 13.7931 8.48605 12.7586C9.42894 11.7241 10.0575 11.0345 10.6861 10.3448C11.3147 9.65517 11.3147 8.96552 11.3147 7.93103C11.3147 5.86207 10.3718 4.82759 8.80035 4.82759C8.17175 4.82759 7.54316 5.17241 6.91456 5.86207C6.28596 6.55172 6.28596 7.58621 6.28596 8.62069H0C0 5.86207 0.942894 3.7931 2.20009 2.41379C3.45728 1.03448 5.97166 0 8.80035 0C11.629 0 13.5148 0.689655 15.0863 2.06897C16.6578 3.44828 17.2864 5.51724 17.2864 7.93103C17.2864 8.96552 16.9721 10 16.6578 11.0345C16.3435 12.069 15.7149 12.7586 14.772 13.7931L12.5719 15.8621C11.9433 16.5517 11.629 17.2414 11.3147 17.931C11.0004 18.6207 11.0004 19.6552 11.0004 20.3448H5.65737ZM5.02877 26.5517C5.02877 25.5172 5.34307 24.8276 5.97166 24.1379C6.60026 23.4483 7.54316 23.1034 8.48605 23.1034C9.42894 23.1034 10.3718 23.4483 11.0004 24.1379C11.629 24.8276 11.9433 25.5172 11.9433 26.5517C11.9433 27.5862 11.629 28.6207 11.0004 28.9655C10.3718 29.3103 9.42894 30 8.48605 30C7.54316 30 6.60026 29.6552 5.97166 28.9655C5.34307 28.2759 5.02877 27.5862 5.02877 26.5517Z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+        <!-- menu icon -->
+    <div class="menu-icon">
+      <div></div>
+    </div>
+
+    <!-- LOGO -->
+    <header class="header-body header-body--auth">
+      <img src="img/logo-bot.svg" alt="ставкиБот" class="logo-name" />
+    </header>
+    <main class="main-body">
+      <!-- LOGIN-SECTION -->
+      <section class="section-hero--auth" id="makebet">
+        <header class="header-section">
+          <h1 class="heading-1">
+            Сделать ставку
+          </h1>
+        </header>
+        <main class="main-section">
+          <div class="balance">
+            <div class="balance-text">
+              <span class="balance-title">Баланс</span>
+              <span class="balance-amount">5 000</span>
+            </div>
+            <a href="#add">
+              <button class="btn btn--white">+ Пополнить</button>
+            </a>
+            <a href="#withdraw">
+              <button class="btn btn--white">Забрать</button>
+            </a>
+          </div>
+          <div class="cta-block">
+            <hr>
+            <p class="paragraph">Выберите коэффициент:</p>
+          </div>
+          <form action="" class="form--range">
+            <div class="range-slider">
+              <!-- <span class="range-slider__risk">Минимальный риск</span> -->
+              <div class="values-container">
+                <div class="values-container__single __active">
+                  <span class="risk">Минимальный риск</span>
+                  <span class="milestone"></span>
+                  <span class="value">1.001</span>
+                </div>
+                <div class="values-container__single">
+                  <span class="risk">Низкий риск</span>
+                  <span class="milestone"></span>
+                  <span class="value">1.002</span>
+                </div>
+                <div class="values-container__single">
+                  <span class="risk">Средние риски</span>
+                  <span class="milestone"></span>
+                  <span class="value">1.003</span>
+                </div>
+                <div class="values-container__single">
+                  <span class="risk">Высокие риски</span>
+                  <span class="milestone"></span>
+                  <span class="value">1.004</span>
+                </div>
+                <div class="values-container__single">
+                  <span class="risk">Очень высокие риски</span>
+                  <span class="milestone"></span>
+                  <span class="value">1.005</span>
+                </div>
+              </div>
+              <input
+                class="range-slider__range"
+                type="range"
+                step="0.001"
+                min="1.001"
+                max="1.005"
+                value="1.001"
+              />
+            </div>
+            <button class="btn btn--green" type="submit" data-action="start">
+              Запуск бота
+            </button>
+          </form>
+        </main>
+        <footer class="footer-section">
+          <!-- Activate by adding class __active -->
+          <div class="modal-waiting">
+            <h2 class="heading-2">Ищем...</h2>
+            <img src="img/icon-waiting.svg" alt="" class="waiting-img" />
+            <button class="btn btn--green" type="submit" data-action="stop">
+              Стоп
+            </button>
+          </div>
+          <div class="modal-success">
+            <h2 class="heading-2">Ставка сделана</h2>
+            <hr>
+            <h3 class="heading-3">
+              ФК Барселона - ФК Петушок
+            </h3>
+            <h3 class="heading-3">
+              1.001
+            </h3>
+            <h3 class="heading-3">
+              матч состоится 12.03.2020 в 12:12
+            </h3>
+            <hr>
+            <button class="btn btn--green" type="submit" data-action="ok">
+              <img src="img/icon-succeded.svg" alt="" class="waiting-img" />
+              Ok
+            </button>
+          </div>
+        </footer>
+      </section>
+      <!-- MY DEALS SECTION -->
+      <section class="section-deals section-deals--personal">
+        <header class="header-section">
+          <h2 class="heading-2">Мои ставки</h2>
+        </header>
+        <main class="main-section">
+          <!-- DISPLAY ONLY DESKTOP -->
+          <table class="table-results">
+            <thead>
+              <tr>
+                <th>КОМАНДЫ</th>
+                <th>ПОБЕДА</th>
+                <th>ВРЕМЯ</th>
+                <th>КОЭФФИ<br />ЦИЕНТ</th>
+                <th>СТАВКА, ₽</th>
+                <th>ВРЕМЯ СТАВКИ</th>
+                <th>ВЫИГРЫШ, ₽</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td></td>
+                <td></td>
+                <td class="risk-1">1.004</td>
+                <td>10 000</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td></td>
+                <td></td>
+                <td class="risk-2">1.004</td>
+                <td>10 000</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td class="risk-3">1.004</td>
+                <td>10 000</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td class="win">+11 000</td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td>1.004</td>
+                <td>10 000</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td>+11 000</td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td class="risk-4">1.004</td>
+                <td>10 000</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+                <td class="lost">-11 000</td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+          <!-- DISPLAY ONLY MOBILE -->
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span></span>
+                <span>ВРЕМЯ</span>
+                <span></span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>СТАВКА, ₽</span>
+
+                <span>10 000</span>
+                <span>ВРЕМЯ СТАВКИ</span>
+                <span>12:44, 01.01.20</span>
+                <span>ВЫИГРЫШ, ₽</span>
+                <span>11 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span></span>
+                <span>ВРЕМЯ</span>
+                <span></span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>СТАВКА, ₽</span>
+
+                <span>10 000</span>
+                <span>ВРЕМЯ СТАВКИ</span>
+                <span>12:44, 01.01.20</span>
+                <span>ВЫИГРЫШ, ₽</span>
+                <span>11 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span></span>
+                <span>ВРЕМЯ</span>
+                <span></span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-2">1.004</span>
+                <span>СТАВКА, ₽</span>
+
+                <span>10 000</span>
+                <span>ВРЕМЯ СТАВКИ</span>
+                <span>12:44, 01.01.20</span>
+                <span>ВЫИГРЫШ, ₽</span>
+                <span>11 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span></span>
+                <span>ВРЕМЯ</span>
+                <span></span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-3">1.004</span>
+                <span>СТАВКА, ₽</span>
+
+                <span>10 000</span>
+                <span>ВРЕМЯ СТАВКИ</span>
+                <span>12:44, 01.01.20</span>
+                <span>ВЫИГРЫШ, ₽</span>
+                <span>11 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span></span>
+                <span>ВРЕМЯ</span>
+                <span></span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-4">1.004</span>
+                <span>СТАВКА, ₽</span>
+
+                <span>10 000</span>
+                <span>ВРЕМЯ СТАВКИ</span>
+                <span>12:44, 01.01.20</span>
+                <span>ВЫИГРЫШ, ₽</span>
+                <span>11 000</span>
+          </div>
+        </main>
+        <footer class="footer-section">
+          <button class="btn btn--more">
+            <img src="img/icon-more.svg" alt="" class="icon-more">
+          </button>
+        </footer>
+      </section>
+      <!-- LAST DEALS SECTION -->
+      <section class="section-deals">
+        <header class="header-section">
+          <h2 class="heading-2">Последние события</h2>
+        </header>
+        <main class="main-section">
+          <table class="table-results">
+            <thead>
+              <tr>
+                <th>КОМАНДЫ</th>
+                <th>ПОБЕДА</th>
+                <th>ФОРА</th>
+                <th>КОЭФФИЦИЕНТ</th>
+                <th>ВРЕМЯ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>+2</td>
+                <td>1.001</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>+2</td>
+                <td>1.001</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>+2</td>
+                <td>1.001</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>+2</td>
+                <td>1.001</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+              </tr>
+              <tr>
+                <td>ФК Барселона - ФК Петушок</td>
+                <td>2</td>
+                <td>+2</td>
+                <td>1.001</td>
+                <td>
+                  12:44<br />
+                  01.01.20
+                </td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+          <!-- DISPLAY ONLY MOBILE -->
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span>2</span>
+                <span>ФОРА</span>
+                <span>+2</span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>ВРЕМЯ</span>
+                <span>10 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span>2</span>
+                <span>ФОРА</span>
+                <span>+2</span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>ВРЕМЯ</span>
+                <span>10 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span>2</span>
+                <span>ФОРА</span>
+                <span>+2</span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>ВРЕМЯ</span>
+                <span>10 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span>2</span>
+                <span>ФОРА</span>
+                <span>+2</span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>ВРЕМЯ</span>
+                <span>10 000</span>
+          </div>
+          <div class="table-container">
+                <span>КОМАНДЫ</span>
+                <span>ФК Барселона - ФК Петушок</span>
+                <span>ПОБЕДА</span>
+                <span>2</span>
+                <span>ФОРА</span>
+                <span>+2</span>
+                <span>КОЭФФИЦИЕНТ</span>
+                <span class="risk-1">1.004</span>
+                <span>ВРЕМЯ</span>
+                <span>10 000</span>
+          </div>
+        </main>
+        <footer class="footer-section">
+              <a href="#makebet">
+                <button class="btn btn--green" type="submit">
+                  Сделать ставку
+                </button>
+              </a>
+        </footer>
+      </section>
+      <!-- ABOUT-SECTION -->
+      <section class="section-about" id="section-about">
+        <header class="header-section">
+          <h2 class="heading-2">О сервисе</h2>
+          <a href="authorized.html" class="modal-close">&times;</a>
+        </header>
+        <main class="main-section">
+          <blockquote class="quote-wrapper">
+            Математика может открыть определенную последовательность даже в
+            хаосе. <br />
+            <i>Гертруда Стайн</i>
+          </blockquote>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+            saepe, tenetur itaque libero alias temporibus aliquid eligendi nihil
+            ea nam voluptate odio inventore. Ducimus excepturi, dolores
+            necessitatibus quam eligendi ab!
+          </p>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+            saepe, tenetur itaque libero alias temporibus aliquid eligendi nihil
+            ea nam voluptate odio inventore. Ducimus excepturi, dolores
+            necessitatibus quam eligendi ab!
+          </p>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+            saepe, tenetur itaque libero alias temporibus aliquid eligendi nihil
+            ea nam voluptate odio inventore. Ducimus excepturi, dolores
+            necessitatibus quam eligendi ab!
+          </p>
+        </main>
+      </section>
+      <!-- FAQ-SECTION -->
+      <section class="section-faq" id="section-faq">
+        <header class="header-section">
+          <h2 class="heading-2">Как это работает?</h2>
+          <a href="authorized.html" class="modal-close">&times;</a>
+        </header>
+        <main class="main-section">
+          <ul class="faq-list">
+            <li class="faq-item">
+              <h3 class="heading-3 faq-title">
+                Lorem ipsum
+              </h3>
+              <p class="paragraph faq-answer">
+                dolor, sit amet consectetur adipisicing elit. Soluta voluptas
+                ipsam corrupti enim magnam temporibus iure aperiam consequuntur
+                praesentium et, officia, minima sequi doloremque. Assumenda,
+                ipsam sunt? Assumenda, explicabo distinctio.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="heading-3 faq-title">
+                Lorem ipsum
+              </h3>
+              <p class="paragraph faq-answer">
+                dolor, sit amet consectetur adipisicing elit. Soluta voluptas
+                ipsam corrupti enim magnam temporibus iure aperiam consequuntur
+                praesentium et, officia, minima sequi doloremque. Assumenda,
+                ipsam sunt? Assumenda, explicabo distinctio.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="heading-3 faq-title">
+                Lorem ipsum
+              </h3>
+              <p class="paragraph faq-answer">
+                dolor, sit amet consectetur adipisicing elit. Soluta voluptas
+                ipsam corrupti enim magnam temporibus iure aperiam consequuntur
+                praesentium et, officia, minima sequi doloremque. Assumenda,
+                ipsam sunt? Assumenda, explicabo distinctio.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="heading-3 faq-title">
+                Lorem ipsum
+              </h3>
+              <p class="paragraph faq-answer">
+                dolor, sit amet consectetur adipisicing elit. Soluta voluptas
+                ipsam corrupti enim magnam temporibus iure aperiam consequuntur
+                praesentium et, officia, minima sequi doloremque. Assumenda,
+                ipsam sunt? Assumenda, explicabo distinctio.
+              </p>
+            </li>
+            <li class="faq-item">
+              <h3 class="heading-3 faq-title">
+                Lorem ipsum
+              </h3>
+              <p class="paragraph faq-answer">
+                dolor, sit amet consectetur adipisicing elit. Soluta voluptas
+                ipsam corrupti enim magnam temporibus iure aperiam consequuntur
+                praesentium et, officia, minima sequi doloremque. Assumenda,
+                ipsam sunt? Assumenda, explicabo distinctio.
+              </p>
+            </li>
+          </ul>
+        </main>
+      </section>
+            <!-- MODAL ADD MONEY -->
+      <section class="section-add  modal-window" id="add">
+        <main class="main-section">
+          <h2 class="heading-2">Пополнить баланс</h2>
+          <hr>
+          <p class="paragraph">используя QIWI-кошелёк</p>
+          <a href="authorized.html" class="modal-close">&times;</a>
+          <!-- FORM SIGNUP -->
+          <form action="#" class="form">
+            <!-- add class __error to input on validation error -->
+            <div class="input-block">
+              <label for="email" class="form-label">Email</label>
+              <input required type="email" name="email" class="form-input" placeholder="name@example.com"></input>
+            </div>
+            <div class="input-block">
+              <label for="phone" class="form-label">Телефон</label>
+              <input required type="text" name="phone" class="form-input" placeholder="+7123456789"></input>
+            </div>
+            <div class="input-block">
+              <label for="amount" class="form-label">Сумма</label>
+              <input required type="text" name="amount" class="form-input currency" placeholder="50 000"></input>
+            </div>
+            <button class="btn btn--green">Зачислить</button>
+            <div class="error">Error! Please try again later</div>
+          </form>
+        </main>
+      </section>
+            <!-- MODAL WITHDRAW MONEY -->
+      <section class="section-withdraw  modal-window" id="withdraw">
+        <main class="main-section">
+          <h2 class="heading-2">Вывести баланс</h2>
+          <hr>
+          <p class="paragraph">используя QIWI-кошелёк</p>
+          <a href="authorized.html" class="modal-close">&times;</a>
+          <!-- FORM SIGNUP -->
+          <form action="#" class="form">
+            <!-- add class __error to input on validation error -->
+            <div class="input-block">
+              <label for="amount" class="form-label">Сумма</label>
+              <input required type="text" name="amount" class="form-input currency" placeholder="50 000"></input>
+            </div>
+            <button class="btn btn--green">Вывести</button>
+            <div class="error">Error! Please try again later</div>
+          </form>
+        </main>
+      </section>
+    </main>
+    <footer class="footer-body"></footer>
+  </body>
+  <script src="script/app.js"></script>
+</html>

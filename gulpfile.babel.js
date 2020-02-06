@@ -105,7 +105,7 @@ export function styles(done) {
         failAfterError: false,
         fix: true
       }),
-      postcss({}),
+      // postcss({}),
       cssnano(),
       gulp.dest(paths.styles.dest)
     ],
@@ -119,7 +119,7 @@ export function scripts(done) {
     [
       gulp.src(paths.scripts.src),
       newer(paths.dest),
-      babel(),
+      // babel(),
       gulp.dest(paths.dest)
     ],
     done

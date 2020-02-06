@@ -1,0 +1,40 @@
+:root {
+  --font-main: "Roboto Condensed", sans-serif;
+
+  --shadow-main: 5px 0px 7px rgba(0, 0, 0, 0.5);
+
+  // COLORS
+  --color-black: #494d51;
+  --color-grey-light: #e5e5e5;
+  --color-grey-dark: #c4c4c4;
+  --color-grey: #e6e7e8;
+  --color-turquoise: #2bf2b7;
+  --color-turquoise-dark: #20b589;
+  --color-turquoise-light: #aafae2;
+  --color-green-light: #3dc65d;
+  --color-green-dark: #05a274;
+  --color-red: #e03363;
+  --color-orange: #ff6c4d;
+  --color-yellow: #ffec21;
+}
+
+// SASS Varibles
+// RESPONSIVE VARIABLES
+$bp-largest: 112.5em; // 1800px
+$bp-larger: 90em; // 1440px
+$bp-large: 75em; // 1200px
+$bp-medium: 64em; // 1024px
+$bp-medium-small: 50em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-smaller: 25.875em; // 414px
+$bp-smallest: 22em; // 360px
+
+// COLORS
+$modal-back: rgba(73, 77, 81, 0.9);
+
+// SLIDER VARS
+// Risk level
+$risk-1: #20b589;
+$risk-2: #ffec21;
+$risk-3: #ff6c4d;
+$risk-4: #e03363;

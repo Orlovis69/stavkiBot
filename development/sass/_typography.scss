@@ -1,0 +1,184 @@
+%heading {
+  font-family: var(--font-main);
+  font-weight: bold;
+  line-height: 1.3;
+}
+%paragraph {
+  font-family: var(--font-main);
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.heading {
+  &-1 {
+    @extend %heading;
+    font-size: 2.2em;
+    @media screen and (min-width: $bp-largest) {
+      font-size: 2.5em;
+    }
+    @media screen and (max-width: $bp-small) {
+      font-size: 2.5em;
+    }
+  }
+  &-2 {
+    @extend %heading;
+    font-size: 1.8em;
+    @media screen and (min-width: $bp-largest) {
+      font-size: 2.1em;
+    }
+  }
+  &-3 {
+    @extend %heading;
+    font-size: 1.5em;
+    @media screen and (min-width: $bp-largest) {
+      font-size: 1.8em;
+    }
+  }
+  &-4 {
+    @extend %heading;
+    font-size: 1.2em;
+    @media screen and (min-width: $bp-largest) {
+      font-size: 1.4em;
+    }
+  }
+}
+
+.paragraph {
+  @extend %paragraph;
+  font-size: 1em;
+  text-align: justify;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  @media screen and (min-width: $bp-largest) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: $bp-small) {
+    font-size: 1.65em;
+  }
+}
+
+.btn {
+  @extend %paragraph;
+  font-size: 1.32em;
+  line-height: 1;
+  @media screen and (max-width: $bp-small) {
+    font-size: 1.95em;
+  }
+}
+
+//////////////////////
+// TABLE
+
+.table-results {
+  text-align: center;
+  & thead tr th {
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+  & thead tr th:first-of-type,
+  & tbody tr td:first-of-type {
+    text-align: left;
+  }
+}
+
+blockquote {
+  @extend %heading;
+  font-size: 1.6em;
+  @media screen and (max-width: $bp-small) {
+    font-size: 1.1em;
+  }
+  &::before,
+  &::after {
+    font-size: 4em;
+    line-height: 1;
+  }
+  & i {
+    // text-align: right;
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+}
+
+.signup-section,
+.login-section {
+  & h2 {
+    text-align: center;
+  }
+}
+
+//////////////////////////
+// FORM TYPOGRAPHY
+.form {
+  @extend %paragraph;
+  & .form-label {
+    font-size: 0.9em;
+  }
+  & .form-input {
+    font-size: 1.1em;
+  }
+  & .form-link {
+    color: white;
+  }
+  & .form-text {
+    font-size: 1.3em;
+    text-align: center;
+    &.offer {
+      font-size: 0.8em;
+    }
+  }
+  & .error {
+    text-align: center;
+  }
+}
+
+.range-slider .value {
+  @extend %paragraph;
+  font-size: 1em;
+  line-height: 1;
+  @media screen and (max-width: $bp-small) {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+//////////////////////////
+// AUTHORIZED PAGE TYPOGRAPHY
+.balance {
+  &-title {
+    @extend %paragraph;
+    font-size: 1.1em;
+    @media screen and (max-width: $bp-small) {
+      font-size: 2.1em;
+    }
+  }
+  &-amount {
+    @extend %heading;
+    font-size: 1.875em;
+    font-size: 3.65vw;
+    font-weight: bold;
+    @media screen and (max-width: $bp-small) {
+      font-size: 3.5em;
+    }
+  }
+}
+
+.body--auth {
+  & .section-about,
+  & .section-faq,
+  & .section-add {
+    color: white;
+  }
+  & .section-add,
+  & .section-withdraw {
+    & h2,
+    & p {
+      text-align: center;
+    }
+  }
+}
+
+a.btn {
+  text-align: center;
+  font-weight: bold;
+}

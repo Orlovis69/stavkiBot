@@ -1,0 +1,48 @@
+.nav {
+  &-account {
+    background-color: var(--color-grey-dark);
+    padding-top: 12.2vw;
+    width: 6vw;
+    height: 100vh;
+    box-shadow: var(--shadow-main);
+    @media screen and (max-width: $bp-small) {
+      width: 0;
+    }
+    &.__active {
+      @media screen and (max-width: $bp-small) {
+        padding-top: 0;
+        width: 100%;
+      }
+      & .nav-list {
+        height: 100%;
+      }
+    }
+    & .nav-item {
+      &:not(:last-child) {
+        margin-bottom: 8.2vw;
+        @media screen and (max-width: $bp-small) {
+          margin-bottom: 0;
+        }
+      }
+    }
+    & .nav-link {
+      &,
+      &:link,
+      &:visited {
+        & svg {
+          fill: var(--color-grey);
+        }
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        & svg {
+          fill: var(--color-turquoise);
+        }
+      }
+    }
+    & .nav-item.__active .nav-link svg {
+      fill: var(--color-turquoise);
+    }
+  }
+}

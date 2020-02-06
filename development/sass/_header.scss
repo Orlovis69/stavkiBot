@@ -1,0 +1,38 @@
+.header-body {
+  padding: 2.5vw;
+  @media screen and (max-width: $bp-small) {
+    padding-left: 4.83vw;
+  }
+  &.header-body--auth {
+    padding-left: 12.3vw;
+    @media screen and (max-width: $bp-small) {
+      padding-left: 4.83vw;
+    }
+  }
+  & img {
+    height: 6vw;
+    @media screen and (max-width: $bp-medium) {
+      height: 10vw;
+    }
+  }
+  & .logo-img {
+    width: auto;
+    @media screen and (max-width: $bp-medium) {
+      width: 10vw;
+    }
+    &:nth-child(1) {
+      @media screen and (max-width: $bp-small) {
+        display: none;
+      }
+    }
+  }
+  & .logo-name {
+    @media screen and (max-width: $bp-small) {
+      width: 44.2vw;
+    }
+  }
+}
+
+.header-section {
+  margin-bottom: 3.4vw;
+}

@@ -1,0 +1,333 @@
+.form {
+  // margin-bottom: 2.3vw;
+  // margin-top: 2.3vw;
+  @media screen and (max-width: $bp-small) {
+    // margin-bottom: 7.5vw;
+    // margin-top: 0;
+  }
+
+  & .input-block {
+    & > input {
+      display: block;
+    }
+    & > label,
+    & > a,
+    & > span {
+      display: inline-block;
+    }
+    &--text {
+    }
+  }
+
+  // CHANGE RESET BEHAVOIUR
+  & * + * {
+    margin-top: 1vw;
+  }
+  & .input-block + button {
+    margin-top: calc(1vw + 1em);
+  }
+  & .error + div {
+    margin-top: 0;
+  }
+  & .input-block > * + * {
+    margin-top: 0;
+  }
+
+  & input[type="submit"] {
+    margin-top: 3vw;
+    outline: none;
+    @media screen and (max-width: $bp-small) {
+      margin-top: 7.5vw;
+    }
+  }
+
+  & input[type="text"],
+  & input[type="tel"],
+  & input[type="email"],
+  & input[type="password"] {
+    -webkit-appearance: none;
+    padding: 0 1.2em 0 1em;
+    width: 20em;
+    min-height: 3em;
+    min-height: 2.7em;
+    max-height: 4em;
+    outline: none;
+    border-radius: 10px;
+    border: solid var(--color-turquoise);
+    background-color: var(--color-grey-light);
+    // border-bottom: 2px solid var(--color-grey-dark);
+
+    // @media screen and (min-width: $bp-largest) {
+    //   // width: 22vw;
+    //   // height: 5.61vw;
+    //   // padding: 1.33vw;
+    // }
+    @media screen and (max-width: $bp-small) {
+      width: 80vw;
+      height: 15vw;
+    }
+
+    // if field error, JS adds class __error
+    &.__error {
+      // display: inline-block;
+      // border-bottom: 2px solid #d72f4b;
+      background-image: url(../svg-raw/icon-alert.svg);
+      background-size: 5%;
+      background-position: 98% 59%;
+      background-repeat: no-repeat;
+      @media screen and (min-width: $bp-largest) {
+        background-position: 98% 53%;
+      }
+      & ~ .error {
+        display: block;
+      }
+    }
+  }
+  & label {
+    color: white;
+    padding-left: 1vw;
+    transition: opacity 0.2s ease-in, transform 0.3s ease-out 0.2s;
+    @media screen and (max-width: $bp-small) {
+    }
+  }
+
+  & a {
+    &,
+    &:link,
+    &:visited {
+      color: var(--color-turquoise);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-red);
+    }
+  }
+
+  & .form-text {
+    color: white;
+    width: 100%;
+    display: block;
+    & > .form-link {
+      margin-left: 1vw;
+    }
+  }
+
+  & .error {
+    padding-left: 0;
+    width: 100%;
+    color: var(--color-red);
+    margin: 0;
+    margin-top: 1vw;
+    display: none;
+  }
+}
+
+.form--range {
+  // vars for change in JS
+  --color-range: #ffffff;
+  --color-slider: #05a274;
+  @media screen and (max-width: $bp-small) {
+    padding-top: 3em;
+    // --color-slider: transparent;
+  }
+
+  .range-slider {
+    width: 62.5vw;
+    height: 15vw;
+    @media screen and (max-width: $bp-small) {
+      width: 90vw;
+      width: 88vw;
+      height: 21vw;
+    }
+    @media screen and (max-width: $bp-smaller) {
+      width: 90vw;
+      width: 85vw;
+      height: 21vw;
+    }
+    & .values-container {
+      width: 62.5vw;
+      // height: 2.2em;
+      height: 13vw;
+      @media screen and (max-width: $bp-small) {
+        width: 90%;
+      }
+      // width: 100%;
+      margin-top: 0;
+      & span.milestone {
+        margin: 0;
+        display: block;
+        width: 0.9em;
+        height: 0.9em;
+        background-color: white;
+        border-radius: 50%;
+        margin-bottom: 1.5vw;
+        @media screen and (max-width: $bp-small) {
+          display: none;
+        }
+      }
+      & span.risk {
+        visibility: hidden;
+        opacity: 0;
+      }
+      & .values-container__single .value {
+        @media screen and (max-width: $bp-small) {
+          padding: 1em;
+          border-radius: 10px;
+          border: solid 1px transparent;
+        }
+      }
+      & .values-container__single.__active {
+        & .value {
+          color: var(--color-slider);
+          @media screen and (max-width: $bp-small) {
+            border-color: var(--color-slider);
+          }
+        }
+        & .risk {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .range-slider__range {
+    -webkit-appearance: none;
+    width: 62.5vw;
+    height: 0.4125em;
+    border-radius: 5px;
+    background: var(--color-range);
+    outline: none;
+    padding: 0;
+    margin: 0;
+    @media screen and (max-width: $bp-small) {
+      width: 90%;
+      opacity: 0;
+    }
+
+    // Range Handle
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background: var(--color-slider);
+      cursor: pointer;
+      transition: background 0.35s ease-in-out;
+      box-shadow: 0 0 0 3px var(--color-range), 0 0 0 6px var(--color-slider);
+
+      &:hover {
+        background: var(--color-range);
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      background: var(--color-slider);
+    }
+
+    &::-moz-range-thumb {
+      width: 0.9em;
+      height: 0.9em;
+      border: 0;
+      border-radius: 50%;
+      background: var(--color-slider);
+      cursor: pointer;
+      transition: background 0.15s ease-in-out;
+
+      &:hover {
+        background: var(--color-range);
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      background: var(--color-slider);
+    }
+
+    // Focus state
+    &:focus {
+      &::-webkit-slider-thumb {
+        box-shadow: 0 0 0 3px var(--color-range), 0 0 0 6px var(--color-slider);
+      }
+    }
+  }
+
+  // Range Label
+  .range-slider .risk {
+    display: block;
+    position: relative;
+    width: 17vw;
+    min-width: max-content;
+    color: var(--color-slider);
+    text-align: center;
+    border-radius: 3px;
+    background: white;
+    padding: 0.6em 0.9em;
+    margin-bottom: 2em;
+    height: 2.5em;
+    @media screen and (max-width: $bp-small) {
+      margin-bottom: 2.8em;
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border: solid 1.2em transparent;
+      border-top-color: white;
+    }
+  }
+
+  // Firefox Overrides
+  ::-moz-range-track {
+    background: var(--color-range);
+    border: 0;
+  }
+
+  input::-moz-focus-inner,
+  input::-moz-focus-outer {
+    border: 0;
+  }
+}
+
+// MAKE A BET FORM
+.form--bet {
+  & .form-label {
+    color: var(--color-black);
+  }
+  & input[name="amount"] {
+    background-color: white;
+    border-color: white;
+    width: 21vw;
+    // display: inline-block;
+    &::after {
+      display: inline-block;
+      content: url(../svg-raw/rouble.svg);
+      width: 3vw;
+      height: auto;
+    }
+  }
+  .input-block:first-of-type {
+    &::after {
+      display: inline-block;
+      content: url(../svg-raw/rouble.svg);
+      width: 3vw;
+      height: auto;
+    }
+  }
+}
+
+.values-container__single {
+  & .milestone {
+    visibility: hidden;
+  }
+}
+.values-container__single.__active {
+  & ~ .values-container__single {
+    & .milestone {
+      visibility: visible;
+    }
+  }
+}

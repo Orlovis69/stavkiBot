@@ -1,0 +1,430 @@
+a.btn {
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section {
+  & p {
+    position: relative;
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      @media screen and (max-width: $bp-small) {
+        // top: 25%;
+      }
+    }
+    &::before {
+      left: -6vw;
+      @media screen and (max-width: $bp-small) {
+        left: -12vw;
+      }
+    }
+    &::after {
+      right: -2vw;
+      @media screen and (max-width: $bp-small) {
+        right: -12vw;
+      }
+    }
+    &:nth-child(1) {
+      &::before {
+        @media screen and (max-width: $bp-small) {
+          top: 15.5vw;
+        }
+      }
+    }
+  }
+}
+
+.quote-wrapper {
+  position: relative;
+  z-index: 5;
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 1;
+  }
+  &::before {
+    top: 0;
+    left: -6vw;
+    @media screen and (max-width: $bp-small) {
+      left: -7vw;
+    }
+  }
+  &::after {
+    bottom: -6vw;
+    right: 0;
+    @media screen and (max-width: $bp-small) {
+      bottom: -6vw;
+      right: -3vw;
+    }
+  }
+}
+
+.table-results {
+  position: relative;
+  @media screen and (max-width: $bp-medium-small) {
+    display: none;
+  }
+  & thead {
+    position: relative;
+    z-index: 10;
+    &::before {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// TABLE FOR MOBILES
+.table-container {
+  display: none;
+  grid-template-columns: 33vw 1fr;
+  justify-items: left;
+  @media screen and (max-width: $bp-medium-small) {
+    display: grid;
+  }
+}
+
+.faq {
+  &-item {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 2vw;
+      left: -6vw;
+      @media screen and (max-width: $bp-small) {
+        // left: -8vw;
+        top: 4.5vw;
+      }
+    }
+    &.__active {
+      &::after {
+        left: -6vw;
+        top: 1vw;
+        @media screen and (max-width: $bp-small) {
+          left: -9vw;
+          top: 3vw;
+        }
+      }
+    }
+  }
+}
+
+// MODAL WINDOW
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  & .main-section {
+    position: relative;
+  }
+}
+.modal-waiting,
+.modal-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.body--auth {
+  & .header-section {
+    position: relative;
+  }
+  & .modal-close {
+    top: 25%;
+    right: 5%;
+    @media screen and (max-width: $bp-small) {
+      top: -5%;
+      top: 30%;
+    }
+  }
+  & .modal-window .modal-close {
+    top: 25%;
+    right: 5%;
+    @media screen and (max-width: $bp-small) {
+      top: -5%;
+      // top: 30%;
+    }
+  }
+}
+
+// FORM
+.form {
+  & .input-block {
+    position: relative;
+  }
+  &-link {
+    position: absolute;
+    right: 1vw;
+    top: 0;
+  }
+  & .form-text > .form-link {
+    position: relative;
+  }
+}
+.form--range {
+  & .input-block {
+    // position: relative;
+  }
+  & .range-slider {
+    position: relative;
+    // Range Label
+    & .risk {
+      // position: absolute;
+      // top: -1vw;
+      // left: -1vw;
+      &:after {
+        position: absolute;
+        bottom: -2.2em;
+        left: 0.5em;
+      }
+    }
+    & .values-container {
+      position: relative;
+      // display: grid;
+      // grid-template-columns: repeat(5, 1fr);
+      &__single {
+        position: absolute;
+        top: 0;
+        @media screen and (max-width: $bp-small) {
+          top: -50%;
+        }
+        &:nth-child(1) {
+          left: 0;
+          & .risk {
+            margin-left: -2vw;
+            &::after {
+              left: 1.1vw;
+            }
+          }
+          // margin-left: -3vw;
+          @media screen and (max-width: $bp-small) {
+            & .risk {
+              left: 0;
+              &::after {
+                left: 0.5em;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          left: calc(25% - 0.45em);
+          & .risk {
+            margin-left: -2vw;
+            &::after {
+              left: 1.5vw;
+            }
+          }
+          @media screen and (max-width: $bp-small) {
+            & .risk {
+              margin-left: 1vw;
+              &::after {
+                left: 1.1em;
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          left: calc(50% - 0.45em);
+          & .risk {
+            margin-left: -2vw;
+          }
+          @media screen and (max-width: $bp-small) {
+            & .risk {
+              margin-left: -4vw;
+              &::after {
+                left: 2.5em;
+              }
+            }
+          }
+        }
+        &:nth-child(4) {
+          left: calc(75% - 0.45em);
+          & .risk {
+            margin-left: -7vw;
+            &::after {
+              left: 5.5vw;
+            }
+          }
+          @media screen and (max-width: $bp-small) {
+            & .risk {
+              margin-left: -4vw;
+              &::after {
+                left: 3em;
+              }
+            }
+          }
+        }
+        &:nth-child(5) {
+          left: calc(100% - 0.9em);
+          & .risk {
+            margin-left: -13vw;
+            &::after {
+              left: 12vw;
+            }
+          }
+          @media screen and (max-width: $bp-small) {
+            & .risk {
+              margin-left: -17vw;
+              &::after {
+                left: 7.5em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__range {
+      position: absolute;
+      top: 4.7em;
+      left: 0;
+      @media screen and (max-width: $bp-small) {
+        left: 5%;
+      }
+    }
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: $bp-small) {
+    top: -10%;
+    // right: 10%;
+  }
+}
+
+//////////////////////////
+// AUTHORIZED PAGE
+.section-hero--auth {
+  position: relative;
+}
+.balance {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  // justify-content: space-between;
+  @media screen and (max-width: $bp-small) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &-amount {
+    position: relative;
+    &::after {
+      position: absolute;
+      right: -3vw;
+      bottom: 0;
+      @media screen and (max-width: $bp-small) {
+        right: -10vw;
+        bottom: -2vw;
+      }
+    }
+  }
+}
+
+// .section-makebet {
+//   position: relative;
+//   & .form--bet .input-block:first-of-type {
+//     position: relative;
+//     &::after {
+//       position: absolute;
+//       left: 22vw;
+//       bottom: 0;
+//     }
+//   }
+// }
+
+.section-about,
+.section-faq {
+  // display: none;
+  &:target {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.section-deals .footer-section {
+  display: flex;
+  justify-content: center;
+}
+
+// Main Navigation
+
+// .nav-account {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+// }
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-account {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 700;
+  @media screen and (max-width: $bp-small) {
+    display: none;
+    left: initial;
+    right: 0;
+  }
+  &.__active {
+    z-index: 700;
+    // z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: $bp-small) {
+      display: flex;
+    }
+  }
+}
+.nav-list {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  @media only screen and (max-width: $bp-medium-small) {
+    // flex-direction: column;
+    // align-items: center;
+  }
+  @media only screen and (max-width: $bp-small) {
+    justify-content: space-around;
+  }
+}
+
+.nav-item {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -2vw;
+    @media only screen and (max-width: $bp-medium-small) {
+      left: -7vw;
+    }
+  }
+}

@@ -51,5 +51,16 @@
     "stylelint-scss": "^3.14.2",
     "svgo": "^1.3.2",
     "webpack": "^4.41.5"
-  }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-css-variables": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 10 versions",
+    "not ie <= 6"
+  ]
 }

@@ -1,0 +1,100 @@
+.icon {
+  &-nav {
+    width: 40%;
+    height: 2.8vw;
+    margin: 2vw;
+    @media screen and (max-width: $bp-small) {
+      width: 10vw;
+      height: 10vw;
+      margin: 0;
+    }
+  }
+  &-more {
+    width: 5.2vw;
+    height: 5.2vw;
+    @media screen and (max-width: $bp-small) {
+      width: 10.2vw;
+      height: 10.2vw;
+    }
+  }
+}
+
+svg {
+  fill: var(--color-grey);
+  transition: all 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  &:hover {
+    // fill: var(--color-turquoise);
+  }
+}
+
+.svg-icon {
+  width: 0.6em;
+}
+
+/////////////////////
+// HAMBURGERG ICON
+
+.menu-icon {
+  display: block;
+  position: fixed;
+  top: 5vw;
+  right: 2em;
+  width: 2.5em;
+  // height: 4em;
+  height: min-content;
+  cursor: pointer;
+  z-index: 500;
+  @media only screen and (min-width: $bp-medium-small) {
+    display: none;
+  }
+
+  & div {
+    margin: 0.4em 0;
+  }
+  & div,
+  &::before,
+  &::after {
+    content: "";
+    height: 4px;
+    background: var(--color-black);
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+// hover effect for hamberger button
+.menu-icon:hover {
+  & div {
+    transform: scale(0.5);
+  }
+}
+
+// changing hamburger icon to close icon
+.menu-icon.__active {
+  &::before,
+  &::after {
+    background-color: var(--color-black);
+  }
+
+  &::before {
+    transform: translateY(9px) rotate(135deg);
+  }
+
+  &::after {
+    transform: translateY(-9px) rotate(-135deg);
+  }
+
+  & div {
+    transform: scale(0);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: var(--color-turquoise);
+    }
+  }
+}
