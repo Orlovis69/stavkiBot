@@ -58,19 +58,11 @@
   }
 }
 
-.btn {
-  @extend %paragraph;
-  font-size: 1.32em;
-  line-height: 1;
-  @media screen and (max-width: $bp-small) {
-    font-size: 1.95em;
-  }
-}
-
 //////////////////////
 // TABLE
 
 .table-results {
+  @extend %paragraph;
   text-align: center;
   & thead tr th {
     font-weight: 400;
@@ -132,9 +124,10 @@ blockquote {
   }
 }
 
-.range-slider .value {
+.range-slider,
+.radio-container {
   @extend %paragraph;
-  font-size: 1em;
+  font-size: 1.05em;
   line-height: 1;
   @media screen and (max-width: $bp-small) {
     font-size: 1.2em;
@@ -143,11 +136,12 @@ blockquote {
 }
 
 //////////////////////////
-// AUTHORIZED PAGE TYPOGRAPHY
+// AUTHOZED PAGE TYPOGRAPHY
 .balance {
   &-title {
     @extend %paragraph;
     font-size: 1.1em;
+    line-height: 1;
     @media screen and (max-width: $bp-small) {
       font-size: 2.1em;
     }
@@ -178,7 +172,32 @@ blockquote {
   }
 }
 
+.btn {
+  @extend %paragraph;
+  font-size: 1.32em;
+  line-height: 1;
+  @media screen and (max-width: $bp-small) {
+    font-size: 1.95em;
+  }
+}
+
+.btn,
 a.btn {
+  @extend %heading;
   text-align: center;
   font-weight: bold;
+  // font-size: 25px;
+}
+.nav-link {
+  @extend %heading;
+  font-size: 2.5em;
+}
+
+label,
+input {
+  @extend %heading;
+}
+
+.table-container {
+  @extend %paragraph;
 }

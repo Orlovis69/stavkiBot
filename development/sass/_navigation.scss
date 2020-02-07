@@ -1,23 +1,35 @@
 .nav {
   &-account {
     background-color: var(--color-grey-dark);
-    padding-top: 12.2vw;
+    padding-top: 10.2vw;
     width: 6vw;
     height: 100vh;
     box-shadow: var(--shadow-main);
     @media screen and (max-width: $bp-small) {
+      box-shadow: none;
       width: 0;
+      z-index: -10;
+      transform: translateX(-100vh);
+      transition: all 0.3s ease-in-out;
     }
     &.__active {
       @media screen and (max-width: $bp-small) {
+        // margin-top: 15vw;
         padding-top: 0;
         width: 100%;
+        transform: translateX(0);
       }
       & .nav-list {
         height: 100%;
+        @media screen and (max-width: $bp-small) {
+          height: 50%;
+        }
       }
     }
     & .nav-item {
+      @media screen and (max-width: $bp-small) {
+        width: 70vw;
+      }
       &:not(:last-child) {
         margin-bottom: 8.2vw;
         @media screen and (max-width: $bp-small) {
@@ -26,9 +38,16 @@
       }
     }
     & .nav-link {
+      & span {
+        display: none;
+        @media screen and (max-width: $bp-small) {
+          display: inline-block;
+        }
+      }
       &,
       &:link,
       &:visited {
+        color: var(--color-grey);
         & svg {
           fill: var(--color-grey);
         }
@@ -36,6 +55,7 @@
       &:hover,
       &:focus,
       &:active {
+        color: var(--color-turquoise);
         & svg {
           fill: var(--color-turquoise);
         }

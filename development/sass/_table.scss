@@ -66,9 +66,9 @@ table {
   }
 
   & tbody tr {
-    cursor: pointer;
+    // cursor: pointer;
     &:hover {
-      background-color: var(--color-grey-light);
+      // background-color: var(--color-grey-light);
       & td:nth-child(1) {
         border-top-left-radius: 1em;
         border-bottom-left-radius: 1em;
@@ -107,6 +107,7 @@ table {
 .section-deals--personal .table-results {
   & th:nth-child(1) {
     width: 30vw;
+    width: 25vw;
   }
   & th:nth-child(4) {
     width: 7.8vw;

@@ -1,5 +1,6 @@
 .header-body {
   padding: 2.5vw;
+  // padding-bottom: 4.5vw;
   @media screen and (max-width: $bp-small) {
     padding-left: 4.83vw;
   }
@@ -31,8 +32,4 @@
       width: 44.2vw;
     }
   }
-}
-
-.header-section {
-  margin-bottom: 3.4vw;
 }

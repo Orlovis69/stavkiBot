@@ -55,6 +55,7 @@
     border-radius: 10px;
     border: solid var(--color-turquoise);
     background-color: var(--color-grey-light);
+    color: var(-color-black);
     // border-bottom: 2px solid var(--color-grey-dark);
 
     // @media screen and (min-width: $bp-largest) {
@@ -71,7 +72,7 @@
     &.__error {
       // display: inline-block;
       // border-bottom: 2px solid #d72f4b;
-      background-image: url(../svg-raw/icon-alert.svg);
+      background-image: url(../img/icon-alert.svg);
       background-size: 5%;
       background-position: 98% 59%;
       background-repeat: no-repeat;
@@ -129,40 +130,37 @@
   --color-range: #ffffff;
   --color-slider: #05a274;
   @media screen and (max-width: $bp-small) {
-    padding-top: 3em;
+    // padding-top: 3em;
     // --color-slider: transparent;
   }
 
-  .range-slider {
+  .range-slider,
+  .radio-container {
     width: 62.5vw;
-    height: 15vw;
+    height: 6.66em;
     @media screen and (max-width: $bp-small) {
-      width: 90vw;
       width: 88vw;
-      height: 21vw;
     }
     @media screen and (max-width: $bp-smaller) {
-      width: 90vw;
+      // width: 90vw;
       width: 85vw;
-      height: 21vw;
+      // height: 21vw;
     }
     & .values-container {
       width: 62.5vw;
-      // height: 2.2em;
-      height: 13vw;
+      // height: 13vw;
+      // margin-top: 0;
       @media screen and (max-width: $bp-small) {
         width: 90%;
       }
-      // width: 100%;
-      margin-top: 0;
       & span.milestone {
-        margin: 0;
+        // margin: 0;
         display: block;
-        width: 0.9em;
-        height: 0.9em;
+        width: 1em;
+        height: 1em;
         background-color: white;
         border-radius: 50%;
-        margin-bottom: 1.5vw;
+        margin-bottom: 1em;
         @media screen and (max-width: $bp-small) {
           display: none;
         }
@@ -171,7 +169,7 @@
         visibility: hidden;
         opacity: 0;
       }
-      & .values-container__single .value {
+      & span.value {
         @media screen and (max-width: $bp-small) {
           padding: 1em;
           border-radius: 10px;
@@ -193,16 +191,23 @@
     }
   }
 
+  .radio-container {
+    height: 7.2em;
+  }
+
+  // RANGE SLIDER
   .range-slider__range {
     -webkit-appearance: none;
     width: 62.5vw;
     height: 0.4125em;
     border-radius: 5px;
     background: var(--color-range);
+    z-index: 100;
     outline: none;
     padding: 0;
     margin: 0;
     @media screen and (max-width: $bp-small) {
+      height: 2.4125em;
       width: 90%;
       opacity: 0;
     }
@@ -252,9 +257,21 @@
         box-shadow: 0 0 0 3px var(--color-range), 0 0 0 6px var(--color-slider);
       }
     }
+
+    // Firefox Overrides
+    &::-moz-range-track {
+      background: var(--color-range);
+      border: 0;
+    }
+
+    &::-moz-focus-inner,
+    &::-moz-focus-outer {
+      border: 0;
+    }
   }
 
-  // Range Label
+  // RANGE LABEL
+  .radio-container .risk,
   .range-slider .risk {
     display: block;
     position: relative;
@@ -264,9 +281,8 @@
     text-align: center;
     border-radius: 3px;
     background: white;
-    padding: 0.6em 0.9em;
-    margin-bottom: 2em;
-    height: 2.5em;
+    padding: 0.5em 0.7em;
+    margin-bottom: 1.4em;
     @media screen and (max-width: $bp-small) {
       margin-bottom: 2.8em;
     }
@@ -279,43 +295,33 @@
       border-top-color: white;
     }
   }
+}
 
-  // Firefox Overrides
-  ::-moz-range-track {
-    background: var(--color-range);
-    border: 0;
+//  DISPLAY ONLY CORRESPONDING BLOCK DEPENDING ON RESOLUTION
+.radio-container {
+  display: none;
+  @media screen and (max-width: $bp-small) {
+    display: block;
   }
-
-  input::-moz-focus-inner,
-  input::-moz-focus-outer {
-    border: 0;
+}
+.range-slider {
+  display: block;
+  @media screen and (max-width: $bp-small) {
+    display: none;
   }
 }
 
-// MAKE A BET FORM
-.form--bet {
-  & .form-label {
-    color: var(--color-black);
-  }
-  & input[name="amount"] {
-    background-color: white;
-    border-color: white;
-    width: 21vw;
-    // display: inline-block;
-    &::after {
-      display: inline-block;
-      content: url(../svg-raw/rouble.svg);
-      width: 3vw;
-      height: auto;
-    }
-  }
-  .input-block:first-of-type {
-    &::after {
-      display: inline-block;
-      content: url(../svg-raw/rouble.svg);
-      width: 3vw;
-      height: auto;
-    }
+// INPUT WITH CURRENCY ICON
+input[name="amount"] {
+  background-color: white;
+  border-color: white;
+  width: 21vw;
+  // display: inline-block;
+  &::after {
+    display: inline-block;
+    content: url(../img/rouble.svg);
+    width: 3vw;
+    height: auto;
   }
 }
 
@@ -327,7 +333,104 @@
 .values-container__single.__active {
   & ~ .values-container__single {
     & .milestone {
+      // visibility: visible;
+    }
+  }
+}
+
+///////////////////
+// RADIO BUTTON
+input[type="radio"] {
+  // display: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+  width: 15vw;
+  height: 10vw;
+  outline: none;
+  border: none;
+  // change states when button is checked
+  &:checked {
+    display: block;
+    & + .risk {
       visibility: visible;
+      opacity: 1;
+    }
+    & + .value {
+      color: var(--color-slider);
+      border-color: var(--color-slider);
+    }
+  }
+  @media screen and (max-width: $bp-small) {
+    // display: block;
+  }
+  // visibility: hidden;
+}
+
+.radio-container {
+  display: none;
+  @media screen and (max-width: $bp-small) {
+    display: block;
+  }
+  & .values-container__single {
+    & > .risk {
+      visibility: hidden;
+      opacity: 0;
+    }
+    & > .value {
+      color: inherit;
+      border-color: transparent;
+    }
+  }
+}
+.values-container {
+  &__single {
+    &:nth-child(1) {
+      & .risk {
+        margin-left: -2vw;
+      }
+    }
+    &:nth-child(2) {
+      & .risk {
+        margin-left: -2vw;
+      }
+      @media screen and (max-width: $bp-small) {
+        & .risk {
+          margin-left: 0;
+        }
+      }
+    }
+    &:nth-child(3) {
+      & .risk {
+        margin-left: -2vw;
+      }
+      @media screen and (max-width: $bp-small) {
+        & .risk {
+          margin-left: -4vw;
+        }
+      }
+    }
+    &:nth-child(4) {
+      & .risk {
+        margin-left: -7vw;
+      }
+      @media screen and (max-width: $bp-small) {
+        & .risk {
+          margin-left: 0;
+          margin-left: -6vw;
+        }
+      }
+    }
+    &:nth-child(5) {
+      & .risk {
+        margin-left: -13vw;
+      }
+      @media screen and (max-width: $bp-small) {
+        & .risk {
+          margin-left: -22vw;
+        }
+      }
     }
   }
 }

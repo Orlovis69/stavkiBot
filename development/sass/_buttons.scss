@@ -1,30 +1,20 @@
 .btn {
   cursor: pointer;
   display: inline-block;
-  padding: 1em;
-  // padding: 0.2em 1em;
-  // min-width: 11.6em;
   width: 26vw;
+  padding: 0;
+  width: 11.64em;
+  // height: 2.2em;
+  height: 2.9em;
   min-width: max-content;
-  min-height: 6vw;
-  // min-width: 11.6em;
-  // min-height: 6vw;
+  outline: none;
   border: 2px solid currentColor;
   border-radius: 10px;
-  outline: none;
-  transition: color 0.15s ease-in, border 4.5s ease-in-out;
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  @media screen and (max-width: $bp-medium-small) {
-    width: 30vw;
-  }
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   @media screen and (max-width: $bp-small) {
-    padding: 0.8em;
     width: 70vw;
   }
-  @media screen and (max-width: $bp-smaller) {
-    // padding: 0.8em;
-    // width: 80vw;
-  }
+
   &--green {
     &,
     &:link,
@@ -39,10 +29,8 @@
     }
     &:hover,
     &:focus {
-      // color: var(--color-turquoise-dark);
       background-color: var(--color-turquoise-dark);
       border-color: var(--color-turquoise-dark);
-      // border-color: var(--color-turquoise-dark);
     }
   }
   &--white {
@@ -53,12 +41,10 @@
       background-color: white;
     }
     &:active {
-      // border-color: var(--color-grey-dark);
       color: var(--color-grey-dark);
     }
     &:hover,
     &:focus {
-      // color: var(--color-turquoise-dark);
       background-color: var(--color-turquoise);
       color: white;
       border-color: var(--color-turquoise);
@@ -73,10 +59,8 @@
 .form .btn {
   width: 100%;
   border-color: var(--color-turquoise);
-  padding: 0 1.2em;
-  min-height: 3em;
-  max-height: 4em;
 }
+
 .form--range .btn {
   @media screen and (max-width: $bp-small) {
     width: 90vw;
@@ -84,11 +68,10 @@
 }
 
 .balance .btn {
-  padding: 0.8em 1em;
-  width: 20vw;
-  @media screen and (max-width: $bp-medium-small) {
-    width: 24vw;
-  }
+  padding: 0;
+  width: 7.62em;
+  height: 2.2em;
+  min-height: min-content;
   @media screen and (max-width: $bp-small) {
     width: 90vw;
   }

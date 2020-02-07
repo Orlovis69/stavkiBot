@@ -36,6 +36,13 @@ a.btn {
       }
     }
   }
+  .hero-action {
+    @media screen and (max-width: $bp-medium-small) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 
 .quote-wrapper {
@@ -65,7 +72,7 @@ a.btn {
 
 .table-results {
   position: relative;
-  @media screen and (max-width: $bp-medium-small) {
+  @media screen and (max-width: $bp-small) {
     display: none;
   }
   & thead {
@@ -137,6 +144,7 @@ a.btn {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 150;
 }
 .body--auth {
   & .header-section {
@@ -178,7 +186,8 @@ a.btn {
   & .input-block {
     // position: relative;
   }
-  & .range-slider {
+  & .range-slider,
+  & .radio-container {
     position: relative;
     // Range Label
     & .risk {
@@ -193,8 +202,7 @@ a.btn {
     }
     & .values-container {
       position: relative;
-      // display: grid;
-      // grid-template-columns: repeat(5, 1fr);
+
       &__single {
         position: absolute;
         top: 0;
@@ -204,7 +212,6 @@ a.btn {
         &:nth-child(1) {
           left: 0;
           & .risk {
-            margin-left: -2vw;
             &::after {
               left: 1.1vw;
             }
@@ -222,14 +229,12 @@ a.btn {
         &:nth-child(2) {
           left: calc(25% - 0.45em);
           & .risk {
-            margin-left: -2vw;
             &::after {
               left: 1.5vw;
             }
           }
           @media screen and (max-width: $bp-small) {
             & .risk {
-              margin-left: 1vw;
               &::after {
                 left: 1.1em;
               }
@@ -238,12 +243,8 @@ a.btn {
         }
         &:nth-child(3) {
           left: calc(50% - 0.45em);
-          & .risk {
-            margin-left: -2vw;
-          }
           @media screen and (max-width: $bp-small) {
             & .risk {
-              margin-left: -4vw;
               &::after {
                 left: 2.5em;
               }
@@ -253,14 +254,12 @@ a.btn {
         &:nth-child(4) {
           left: calc(75% - 0.45em);
           & .risk {
-            margin-left: -7vw;
             &::after {
               left: 5.5vw;
             }
           }
           @media screen and (max-width: $bp-small) {
             & .risk {
-              margin-left: -4vw;
               &::after {
                 left: 3em;
               }
@@ -270,14 +269,12 @@ a.btn {
         &:nth-child(5) {
           left: calc(100% - 0.9em);
           & .risk {
-            margin-left: -13vw;
             &::after {
               left: 12vw;
             }
           }
           @media screen and (max-width: $bp-small) {
             & .risk {
-              margin-left: -17vw;
               &::after {
                 left: 7.5em;
               }
@@ -289,9 +286,10 @@ a.btn {
 
     &__range {
       position: absolute;
-      top: 4.7em;
+      top: 3.7em;
       left: 0;
       @media screen and (max-width: $bp-small) {
+        top: 3.7em;
         left: 5%;
       }
     }
@@ -300,7 +298,7 @@ a.btn {
 
 .modal-close {
   position: absolute;
-  top: 0%;
+  top: 2%;
   right: 0%;
   display: flex;
   align-items: center;
@@ -315,6 +313,10 @@ a.btn {
 // AUTHORIZED PAGE
 .section-hero--auth {
   position: relative;
+  & .footer-section {
+    // display: none;
+    visibility: hidden;
+  }
 }
 .balance {
   display: flex;
@@ -339,22 +341,12 @@ a.btn {
   }
 }
 
-// .section-makebet {
-//   position: relative;
-//   & .form--bet .input-block:first-of-type {
-//     position: relative;
-//     &::after {
-//       position: absolute;
-//       left: 22vw;
-//       bottom: 0;
-//     }
-//   }
-// }
-
 .section-about,
 .section-faq {
   // display: none;
+  z-index: 600;
   &:target {
+    z-index: 700;
     position: fixed;
     top: 0;
     left: 0;
@@ -366,31 +358,42 @@ a.btn {
   justify-content: center;
 }
 
-// Main Navigation
-
-// .nav-account {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-// }
-
+// MAIN NAVIGATION
 .nav-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (max-width: $bp-small) {
+    justify-content: space-evenly;
+  }
+}
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: $bp-small) {
+    // justify-content: space-evenly;
+  }
 }
 .nav-account {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 700;
+  z-index: 701;
   @media screen and (max-width: $bp-small) {
-    display: none;
+    // display: none;
     left: initial;
     right: 0;
+    // top: 15vw;
+    & > * {
+      visibility: hidden;
+      display: none;
+    }
   }
+
   &.__active {
-    z-index: 700;
+    z-index: 750;
     // z-index: 10;
     position: fixed;
     top: 0;
@@ -400,20 +403,14 @@ a.btn {
     align-items: center;
     justify-content: center;
     @media screen and (max-width: $bp-small) {
+      align-items: center;
       display: flex;
+      // top: 15vw;
+      & > * {
+        visibility: visible;
+        display: flex;
+      }
     }
-  }
-}
-.nav-list {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-  @media only screen and (max-width: $bp-medium-small) {
-    // flex-direction: column;
-    // align-items: center;
-  }
-  @media only screen and (max-width: $bp-small) {
-    justify-content: space-around;
   }
 }
 
@@ -425,6 +422,31 @@ a.btn {
     left: -2vw;
     @media only screen and (max-width: $bp-medium-small) {
       left: -7vw;
+    }
+  }
+}
+
+.radio-container {
+  & .values-container__single {
+    position: relative;
+    & .radio-input {
+      position: absolute;
+      top: 66%;
+      left: -5%;
+      z-index: 100;
+    }
+  }
+}
+
+// INPUT WITH CRRUNCY ICON
+.currency {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media screen and (max-width: $bp-small) {
+      // right: -11vw;
     }
   }
 }

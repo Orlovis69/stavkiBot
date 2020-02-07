@@ -2,10 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>ставкиБОТ ||</title>
+    <title>ставкиБОТ || Личный кабинет</title>
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
@@ -16,6 +19,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body class="body--auth">
     <!-- SIDE NAVIGATION -->
@@ -25,21 +29,23 @@
         <li class="nav-item">
           <a href="index.html" class="nav-link">
             <img src="img/icon-auth.svg" alt="Logout" class="icon-nav" />
+            <span>Bыход</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#section-about" class="nav-link">
             <svg
-              viewBox="0 0 7 30"
-              class="icon-nav"
-              xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 7 30"
+            class="icon-nav"
+            xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M0 3.24742C0 2.31959 0.281843 1.54639 0.986452 0.927835C1.69106 0.309278 2.39567 0 3.38212 0C4.36857 0 5.2141 0.309278 5.77779 0.927835C6.34148 1.54639 6.76424 2.31959 6.76424 3.24742C6.76424 4.17526 6.34148 4.94845 5.77779 5.56701C5.2141 6.18557 4.36857 6.49484 3.38212 6.49484C2.39567 6.49484 1.55014 6.18557 0.986452 5.56701C0.422765 4.94845 0 4.17526 0 3.24742ZM6.4824 30H0.422765V8.65979H6.4824V30Z"
-              />
-            </svg>
-          </a>
-        </li>
+            <path
+            d="M0 3.24742C0 2.31959 0.281843 1.54639 0.986452 0.927835C1.69106 0.309278 2.39567 0 3.38212 0C4.36857 0 5.2141 0.309278 5.77779 0.927835C6.34148 1.54639 6.76424 2.31959 6.76424 3.24742C6.76424 4.17526 6.34148 4.94845 5.77779 5.56701C5.2141 6.18557 4.36857 6.49484 3.38212 6.49484C2.39567 6.49484 1.55014 6.18557 0.986452 5.56701C0.422765 4.94845 0 4.17526 0 3.24742ZM6.4824 30H0.422765V8.65979H6.4824V30Z"
+            />
+          </svg>
+          <span>О сервисе</span>
+        </a>
+      </li>
         <li class="nav-item">
           <a href="#section-faq" class="nav-link">
             <svg
@@ -51,6 +57,8 @@
                 d="M5.65737 20.3448C5.65737 18.2759 5.97166 16.8966 6.28596 15.5172C6.60026 14.1379 7.54316 13.7931 8.48605 12.7586C9.42894 11.7241 10.0575 11.0345 10.6861 10.3448C11.3147 9.65517 11.3147 8.96552 11.3147 7.93103C11.3147 5.86207 10.3718 4.82759 8.80035 4.82759C8.17175 4.82759 7.54316 5.17241 6.91456 5.86207C6.28596 6.55172 6.28596 7.58621 6.28596 8.62069H0C0 5.86207 0.942894 3.7931 2.20009 2.41379C3.45728 1.03448 5.97166 0 8.80035 0C11.629 0 13.5148 0.689655 15.0863 2.06897C16.6578 3.44828 17.2864 5.51724 17.2864 7.93103C17.2864 8.96552 16.9721 10 16.6578 11.0345C16.3435 12.069 15.7149 12.7586 14.772 13.7931L12.5719 15.8621C11.9433 16.5517 11.629 17.2414 11.3147 17.931C11.0004 18.6207 11.0004 19.6552 11.0004 20.3448H5.65737ZM5.02877 26.5517C5.02877 25.5172 5.34307 24.8276 5.97166 24.1379C6.60026 23.4483 7.54316 23.1034 8.48605 23.1034C9.42894 23.1034 10.3718 23.4483 11.0004 24.1379C11.629 24.8276 11.9433 25.5172 11.9433 26.5517C11.9433 27.5862 11.629 28.6207 11.0004 28.9655C10.3718 29.3103 9.42894 30 8.48605 30C7.54316 30 6.60026 29.6552 5.97166 28.9655C5.34307 28.2759 5.02877 27.5862 5.02877 26.5517Z"
               />
             </svg>
+            <span>Вопросы</span>
+             
           </a>
         </li>
       </ul>
@@ -59,7 +67,6 @@
     <div class="menu-icon">
       <div></div>
     </div>
-
     <!-- LOGO -->
     <header class="header-body header-body--auth">
       <img src="img/logo-bot.svg" alt="ставкиБот" class="logo-name" />
@@ -76,13 +83,13 @@
           <div class="balance">
             <div class="balance-text">
               <span class="balance-title">Баланс</span>
-              <span class="balance-amount">5 000</span>
+              <span class="balance-amount currency">500 000</span>
             </div>
             <a href="#add">
-              <button class="btn btn--white">+ Пополнить</button>
+              <button class="btn btn--white" data-action="add">+ Пополнить</button>
             </a>
             <a href="#withdraw">
-              <button class="btn btn--white">Забрать</button>
+              <button class="btn btn--white" data-action="withdraw">Забрать</button>
             </a>
           </div>
           <div class="cta-block">
@@ -90,8 +97,9 @@
             <p class="paragraph">Выберите коэффициент:</p>
           </div>
           <form action="" class="form--range">
+             <!-- ONLY DESKTOP -->
             <div class="range-slider">
-              <!-- <span class="range-slider__risk">Минимальный риск</span> -->
+
               <div class="values-container">
                 <div class="values-container__single __active">
                   <span class="risk">Минимальный риск</span>
@@ -119,6 +127,7 @@
                   <span class="value">1.005</span>
                 </div>
               </div>
+             
               <input
                 class="range-slider__range"
                 type="range"
@@ -128,21 +137,52 @@
                 value="1.001"
               />
             </div>
-            <button class="btn btn--green" type="submit" data-action="start">
+
+            <!-- ONLY MOBILE -->
+            <div class="radio-container">
+              <div class="values-container">
+                <div class="values-container__single __active">
+                  <input type="radio" class="radio-input" name="riskValue" id="1.001-option" checked="checked">
+                  <label for="1.001-option" class="risk">Минимальный риск</label>
+                  <span class="value">1.001</span>
+                </div>
+                <div class="values-container__single">
+                  <input type="radio" class="radio-input" name="riskValue" id="1.002-option" value="1.002">
+                  <label for="riskValue" class="risk">Низкий риск</label>
+                  <span class="value">1.002</span>
+                </div>
+                <div class="values-container__single">
+                  <input type="radio" class="radio-input" name="riskValue" id="1.003-option" value="1.003">
+                  <label for="riskValue" class="risk">Средние риски</label>
+                  <span class="value">1.003</span>
+                </div>
+                <div class="values-container__single">
+                  <input type="radio" class="radio-input" name="riskValue" id="1.004-option" value="1.004">
+                  <label for="riskValue" class="risk">Высокие риски</label>
+                  <span class="value">1.004</span>
+                </div>
+                <div class="values-container__single">
+                  <input type="radio" class="radio-input" name="riskValue" id="1.005-option" value="1.005">
+                  <label for="riskValue" class="risk">Очень высокие риски</label>
+                  <span class="value">1.005</span>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn--green" type="submit" data-action="done">
               Запуск бота
             </button>
           </form>
         </main>
         <footer class="footer-section">
           <!-- Activate by adding class __active -->
-          <div class="modal-waiting">
+          <div class="modal-waiting __modal-window" id="start">
             <h2 class="heading-2">Ищем...</h2>
             <img src="img/icon-waiting.svg" alt="" class="waiting-img" />
             <button class="btn btn--green" type="submit" data-action="stop">
               Стоп
             </button>
           </div>
-          <div class="modal-success">
+          <div class="modal-success __modal-window" id="done">
             <h2 class="heading-2">Ставка сделана</h2>
             <hr>
             <h3 class="heading-3">
@@ -488,7 +528,7 @@
         </footer>
       </section>
       <!-- ABOUT-SECTION -->
-      <section class="section-about" id="section-about">
+      <section class="section-about __modal-window" id="section-about">
         <header class="header-section">
           <h2 class="heading-2">О сервисе</h2>
           <a href="authorized.html" class="modal-close">&times;</a>
@@ -520,7 +560,7 @@
         </main>
       </section>
       <!-- FAQ-SECTION -->
-      <section class="section-faq" id="section-faq">
+      <section class="section-faq __modal-window" id="section-faq">
         <header class="header-section">
           <h2 class="heading-2">Как это работает?</h2>
           <a href="authorized.html" class="modal-close">&times;</a>
@@ -585,8 +625,8 @@
           </ul>
         </main>
       </section>
-            <!-- MODAL ADD MONEY -->
-      <section class="section-add  modal-window" id="add">
+      <!-- MODAL ADD MONEY -->
+      <section class="section-add modal-window __modal-window" id="add">
         <main class="main-section">
           <h2 class="heading-2">Пополнить баланс</h2>
           <hr>
@@ -612,8 +652,8 @@
           </form>
         </main>
       </section>
-            <!-- MODAL WITHDRAW MONEY -->
-      <section class="section-withdraw  modal-window" id="withdraw">
+      <!-- MODAL WITHDRAW MONEY -->
+      <section class="section-withdraw modal-window __modal-window" id="withdraw">
         <main class="main-section">
           <h2 class="heading-2">Вывести баланс</h2>
           <hr>

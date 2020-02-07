@@ -1,5 +1,21 @@
 .main-body {
   padding: 0 6.25vw 0 12.3vw;
+  @media screen and (max-width: $bp-medium-small) {
+    padding: 0 6.25vw 0 8.3vw;
+  }
+  & * + * {
+    margin-top: 3.4vw;
+  }
+  & .section-hero--auth * + * {
+    margin-top: 2.6vw;
+  }
+  & .section-hero--auth .footer-section * + * {
+    margin-top: 0;
+  }
+  & .section-hero--auth * + button {
+    margin-top: 4.2vw;
+  }
+
   @media screen and (max-width: $bp-small) {
     padding: 0 4.83vw;
   }
@@ -17,14 +33,7 @@
   @media screen and (max-width: $bp-medium-small) {
     padding: 0 7.97vw;
   }
-  & p {
-    // display: block;
-  }
-  & * + * {
-    margin-top: 3.4vw;
-  }
   & a + a {
-    // margin-top: 0;
     margin-left: 3.4vw;
     @media screen and (max-width: $bp-small) {
       margin-left: 0;
@@ -135,21 +144,23 @@ blockquote {
   width: 100vw;
   height: 100vh;
   background-color: var(--color-black);
-  background-color: $modal-back;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition;
   margin: 0;
   &.__active,
   &:target {
     display: flex;
-  }
-  &:target {
-    // display: block;
+    &.__visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
   & h2 {
     color: white;
   }
 }
 .modal-close {
-  // display: block;
   background-color: var(--color-turquoise);
   color: white;
   border-radius: 50%;
@@ -163,14 +174,22 @@ blockquote {
     background-color: var(--color-turquoise-dark);
   }
 }
+
 .modal-waiting,
 .modal-success {
   display: none;
-  background-color: rgba(73, 77, 81, 0.9);
+  background-color: rgba(73, 77, 81, 0.95);
   width: 100%;
   height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
   &.__active {
     display: flex;
+    &.__visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
   & h2,
   & h3 {
@@ -183,11 +202,10 @@ blockquote {
 .section-hero--auth {
   border-radius: 10px;
   background-color: var(--color-grey);
-  padding: 3.4vw 5.1vw;
+  padding: 3.4vw 5.1vw 5.47vw;
   overflow: hidden;
   @media screen and (max-width: $bp-small) {
     padding: 10vw 5.1vw;
-    // padding: 4.8vw;
     border-radius: 0;
   }
   & .main-section {
@@ -199,33 +217,15 @@ blockquote {
   & > * {
     display: inline-block;
   }
-  & > *:not(:last-child) {
-    margin-left: 2.17vw;
-    @media screen and (max-width: $bp-small) {
-      margin-left: 0;
-    }
-  }
 
   &-text {
     padding-right: 4vw;
+    width: max-content;
     & > * {
       display: block;
     }
   }
   &-title {
-  }
-  &-amount {
-    // font-size: 2em;
-
-    &::after {
-      display: inline-block;
-      content: url(../img/rouble.svg);
-      width: 3vw;
-      height: auto;
-      @media screen and (max-width: $bp-small) {
-        width: 10vw;
-      }
-    }
   }
 }
 
@@ -233,10 +233,6 @@ blockquote {
   display: none;
   & hr {
     display: none;
-    // color: white;
-    // display: block;
-    // border-color: white;
-    // background-color: white;
   }
   @media screen and (max-width: $bp-small) {
     display: block;
@@ -248,20 +244,34 @@ blockquote {
   & .section-faq {
     display: none;
     // display: block;
-    // visibility: hidden;
+    visibility: hidden;
     overflow: scroll;
-    // transform: translateX(200%);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(200%);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     &:target {
       display: block;
-      // visibility: visible;
       width: 100vw;
       height: 100vh;
       background-color: var(--color-grey-dark);
       margin: 0;
-      z-index: 600;
-      // transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
+
+    &.__active {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-grey-dark);
+      margin: 0;
+      transform: translateX(0);
+      &.__visible {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
     & .header-section {
       padding: 2.5vw;
       padding-left: 10.9vw;

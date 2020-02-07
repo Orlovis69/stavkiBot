@@ -30,8 +30,10 @@ $bp-smaller: 25.875em; // 414px
 $bp-smallest: 22em; // 360px
 
 // COLORS
-$modal-back: rgba(73, 77, 81, 0.9);
+$modal-back: rgba(73, 77, 81, 0.95);
 
+// TRANSITIONS
+$transition: all 0.3s ease-in-out;
 // SLIDER VARS
 // Risk level
 $risk-1: #20b589;

@@ -3,10 +3,10 @@
 import babel from "gulp-babel";
 import browserSync from "browser-sync";
 import gulp from "gulp";
-import cssnano from "gulp-cssnano";
-import postcss from "gulp-postcss";
-import autoprefixer from "autoprefixer";
 import sass from "gulp-sass";
+import cssnano from "gulp-cssnano";
+import autoprefixer from "autoprefixer";
+import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import stylelint from "gulp-stylelint";
 import purgecss from "gulp-purgecss";
@@ -28,6 +28,7 @@ const paths = {
   },
   styles: {
     src: "./development/**/*.scss",
+    local: "./development/css/",
     dest: "./production/css/"
   },
   scripts: {
@@ -89,8 +90,13 @@ export function fonts(done) {
   );
 }
 
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: "expanded"
+};
+
 // CSS copy and paste
-export function styles(done) {
+export function productionStyles(done) {
   pump(
     [
       gulp.src(paths.styles.src),
@@ -108,6 +114,22 @@ export function styles(done) {
       // postcss({}),
       cssnano(),
       gulp.dest(paths.styles.dest)
+    ],
+    done
+  );
+}
+
+// Build local css from sass
+export function localSass(done) {
+  pump(
+    [
+      gulp.src(paths.styles.src),
+      newer(paths.styles.src),
+      sass(sassOptions).on("error", sass.logError),
+      rename("style.css"),
+      autoprefixer(),
+      // cssnano(),
+      gulp.dest(paths.styles.local)
     ],
     done
   );
@@ -139,7 +161,7 @@ export function watch() {
   gulp.watch(paths.html.src, gulp.series(html, reload));
   gulp.watch(paths.images.src, gulp.series(images, reload));
   gulp.watch(paths.fonts.src, gulp.series(fonts, reload));
-  gulp.watch(paths.styles.src, gulp.series(styles, reload));
+  gulp.watch(paths.styles.src, gulp.series(productionStyles, reload));
   gulp.watch(paths.scripts.src, gulp.series(scripts, reload));
   gulp.watch(paths.php.src, gulp.series(php, reload));
 }
@@ -149,7 +171,7 @@ const firstRun = gulp.series(
   html,
   images,
   fonts,
-  styles,
+  productionStyles,
   scripts,
   php,
   serve,
