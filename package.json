@@ -36,7 +36,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-stylelint": "^13.0.0",
     "node-sass": "^4.13.1",
-    "postcss": "^7.0.26",
+    "postcss": "^8.2.10",
     "postcss-css-variables": "^0.14.0",
     "prettier": "^1.19.1",
     "prettier-stylelint": "^0.4.2",
